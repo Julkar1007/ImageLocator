@@ -1,4 +1,5 @@
 import os
+import json
 from dotenv import load_dotenv
 from io import BytesIO
 from PIL import Image
@@ -7,8 +8,13 @@ import requests
 
 load_dotenv()
 
-def location_based_analysis(image_path, location=""):
-    """Use location hint to help identify the image more accurately"""
+# Load prompts from JSON file
+def load_prompts():
+    with open('prompts.json', 'r', encoding='utf-8') as f:
+        return json.load(f)
+
+def location_based_analysis(image_path, latitude="", longitude="", language="english"):
+    """Use latitude and longitude to help identify the image more accurately"""
     
     # Configure Gemini
     genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
@@ -22,27 +28,15 @@ def location_based_analysis(image_path, location=""):
     else:
         image = Image.open(image_path)
     
-    # Enhanced prompt with location context
-    if location:
-        prompt = f"""Analyze this image with the context that it might be from: {location}
-
-Please identify:
-1. What specific place, landmark, or location is this?
-2. If it matches known places in {location}, provide the exact name and location
-3. If it's a common object/scene, describe it accurately with paragraphs
-4. Your confidence level in this identification ,and no description of the image.
-5. If the image content is not found in {location}, reply "not found in {location}"
-
-Be specific and factual. If unsure, say so."""
+    # Load prompts
+    prompts = load_prompts()
+    
+    # Enhanced prompt with coordinates context
+    if latitude and longitude:
+        prompt_template = prompts.get(language, prompts["english"]).get("with_coordinates")
+        prompt = prompt_template.format(latitude=latitude, longitude=longitude)
     else:
-        prompt = """Analyze this image and identify what it shows:
-
-1. Is this a specific landmark, building, or location?
-2. If it's a famous place, provide its exact name and location
-3. If it's a common object/scene, describe it accurately with paragraphs
-4. Your confidence level in this identification ,and no description of the image.
-
-Be specific and factual."""
+        prompt = prompts.get(language, prompts["english"]).get("basic")
 
     try:
         response = model.generate_content(
@@ -58,12 +52,20 @@ Be specific and factual."""
 # Example usage
 if __name__ == "__main__":
     # Fixed image path
-    image_path = "M.jpg"
-    location_hint = input("Enter location (city/country/region) or press Enter to skip: ").strip()
+    image_path = "bcd.jpg"
+    
+    # Hardcoded coordinates
+    latitude = "24.7460° N"  
+    longitude = "90.4179° E "
+    
+    # Hardcoded language selection
+    language = "english"  # Change to: "english", "chinese", or "traditional_chinese"
     
     print(f"\nAnalyzing image: {image_path}")
-    print(f"Location: '{location_hint}'...")
-    result = location_based_analysis(image_path, location_hint)
+    print(f"Coordinates: {latitude}, {longitude}")
+    print(f"Language: {language}")
     
-    print("ANALYSIS RESULT:")
+    result = location_based_analysis(image_path, latitude, longitude, language)
+    
+    print("\nANALYSIS RESULT:")
     print(result)
