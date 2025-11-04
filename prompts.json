@@ -1,0 +1,14 @@
+{
+  "english": {
+    "basic": "Analyze this image and identify what it shows:\n\n1. Is this a specific landmark, building, or location?\n2. If it's a famous place, provide its exact name and location\n3. If it's a common object/scene, describe it accurately with paragraphs\n4. Your confidence level in this identification, and no description of the image.\n\nBe specific and factual.",
+    "with_coordinates": "Analyze this image with the geographical context of coordinates: Latitude {latitude}, Longitude {longitude}\n\nPlease identify:\n1. What specific place, landmark, or location is this?\n2. If it matches known places near coordinates {latitude}, {longitude}, provide the exact name and location\n3. If it's a common object/scene, describe it accurately with paragraphs\n4. Your confidence level in this identification, and no description of the image\n5. If the image content is not found near coordinates {latitude}, {longitude}, reply \"not found at coordinates {latitude}, {longitude}\"\n\nBe specific and factual. If unsure, say so."
+  },
+  "chinese": {
+    "basic": "分析此图像并识别其内容：\n\n1. 这是特定的地标、建筑或地点吗？\n2. 如果是著名地点，请提供确切名称和位置\n3. 如果是常见物体/场景，请用段落准确描述\n4. 您的识别置信度，不要描述图像本身\n\n请具体且实事求是。",
+    "with_coordinates": "在坐标纬度 {latitude}、经度 {longitude} 的地理背景下分析此图像：\n\n请识别：\n1. 这是哪个具体的地方、地标或位置？\n2. 如果与坐标 {latitude}, {longitude} 附近的已知地点匹配，请提供确切名称和位置\n3. 如果是常见物体/场景，请用段落准确描述\n4. 您的识别置信度，不要描述图像本身\n5. 如果在坐标 {latitude}, {longitude} 附近未找到图像内容，回复\"在坐标 {latitude}, {longitude} 未找到\"\n\n请具体且实事求是。如果不确定，请说明。"
+  },
+  "traditional_chinese": {
+    "basic": "分析此圖像並識別其內容：\n\n1. 這是特定的地標、建築或地點嗎？\n2. 如果是著名地點，請提供確切名稱和位置\n3. 如果是常見物體/場景，請用段落準確描述\n4. 您的識別置信度，不要描述圖像本身\n\n請具體且實事求是。",
+    "with_coordinates": "在座標緯度 {latitude}、經度 {longitude} 的地理背景下分析此圖像：\n\n請識別：\n1. 這是哪個具體的地方、地標或位置？\n2. 如果與座標 {latitude}, {longitude} 附近的已知地點匹配，請提供確切名稱和位置\n3. 如果是常見物體/場景，請用段落準確描述\n4. 您的識別置信度，不要描述圖像本身\n5. 如果在座標 {latitude}, {longitude} 附近未找到圖像內容，回覆\"在座標 {latitude}, {longitude} 未找到\"\n\n請具體且實事求是。如果不確定，請說明。"
+  }
+}
