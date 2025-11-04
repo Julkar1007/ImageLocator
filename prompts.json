@@ -1,14 +1,11 @@
 {
   "english": {
-    "basic": "Analyze this image and identify what it shows:\n\n1. Is this a specific landmark, building, or location?\n2. If it's a famous place, provide its exact name and location\n3. If it's a common object/scene, describe it accurately with paragraphs\n4. Your confidence level in this identification, and no description of the image.\n\nBe specific and factual.",
-    "with_coordinates": "Analyze this image with the geographical context of coordinates: Latitude {latitude}, Longitude {longitude}\n\nPlease identify:\n1. What specific place, landmark, or location is this?\n2. If it matches known places near coordinates {latitude}, {longitude}, provide the exact name and location\n3. If it's a common object/scene, describe it accurately with paragraphs\n4. Your confidence level in this identification, and no description of the image\n5. If the image content is not found near coordinates {latitude}, {longitude}, reply \"not found at coordinates {latitude}, {longitude}\"\n\nBe specific and factual. If unsure, say so."
+    "with_coordinates": "Analyze this image located at coordinates {latitude}, {longitude}. First verify the coordinates correspond to a real geographic area, then identify the exact location shown.\n\n**IF HISTORICAL LANDMARK:**\n**[Name]**\nLocation: [City, Country]\nYear Completed: [Year/Era]\nArchitectural Style: [Style]\nHistorical Overview: [4-6 sentences]\nCultural Impact: [2-3 sentences]\nFamous For: [3 key points]\n\n**IF GENERAL PLACE:**\n**[Name]**\nLocation: [City, Country]\nPrimary Function: [Function]\nOverview and Significance: [4-6 sentences]\nVisitor Experience: [2-3 sentences]\nKnown For: [3 key points]\n\nIf no identifiable location at these coordinates, respond with: \"No verified location found at {latitude}, {longitude}\""
   },
   "chinese": {
-    "basic": "分析此图像并识别其内容：\n\n1. 这是特定的地标、建筑或地点吗？\n2. 如果是著名地点，请提供确切名称和位置\n3. 如果是常见物体/场景，请用段落准确描述\n4. 您的识别置信度，不要描述图像本身\n\n请具体且实事求是。",
-    "with_coordinates": "在坐标纬度 {latitude}、经度 {longitude} 的地理背景下分析此图像：\n\n请识别：\n1. 这是哪个具体的地方、地标或位置？\n2. 如果与坐标 {latitude}, {longitude} 附近的已知地点匹配，请提供确切名称和位置\n3. 如果是常见物体/场景，请用段落准确描述\n4. 您的识别置信度，不要描述图像本身\n5. 如果在坐标 {latitude}, {longitude} 附近未找到图像内容，回复\"在坐标 {latitude}, {longitude} 未找到\"\n\n请具体且实事求是。如果不确定，请说明。"
+    "with_coordinates": "分析位于坐标{latitude}, {longitude}的图像。首先验证坐标对应真实地理区域，然后识别显示的确切位置。\n\n**若是历史地标：**\n**[名称]**\n位置: [城市, 国家]\n建成年份: [年份/时代]\n建筑风格: [风格]\n历史概述: [2-3句话]\n文化影响: [2-3句话]\n著名特色: [3个关键点]\n\n**若是普通地点：**\n**[名称]**\n位置: [城市, 国家]\n主要功能: [功能]\n概述与意义: [2-3句话]\n游客体验: [2-3句话]\n知名特色: [3个关键点]\n\n如果在此坐标无可识别位置，回复：\"在{latitude}, {longitude}未找到验证位置\""
   },
   "traditional_chinese": {
-    "basic": "分析此圖像並識別其內容：\n\n1. 這是特定的地標、建築或地點嗎？\n2. 如果是著名地點，請提供確切名稱和位置\n3. 如果是常見物體/場景，請用段落準確描述\n4. 您的識別置信度，不要描述圖像本身\n\n請具體且實事求是。",
-    "with_coordinates": "在座標緯度 {latitude}、經度 {longitude} 的地理背景下分析此圖像：\n\n請識別：\n1. 這是哪個具體的地方、地標或位置？\n2. 如果與座標 {latitude}, {longitude} 附近的已知地點匹配，請提供確切名稱和位置\n3. 如果是常見物體/場景，請用段落準確描述\n4. 您的識別置信度，不要描述圖像本身\n5. 如果在座標 {latitude}, {longitude} 附近未找到圖像內容，回覆\"在座標 {latitude}, {longitude} 未找到\"\n\n請具體且實事求是。如果不確定，請說明。"
+    "with_coordinates": "分析位於座標{latitude}, {longitude}的圖像。首先驗證座標對應真實地理區域，然後識別顯示的確切位置。\n\n**若是歷史地標：**\n**[名稱]**\n位置: [城市, 國家]\n建成年份: [年份/時代]\n建築風格: [風格]\n歷史概述: [2-3句話]\n文化影響: [2-3句話]\n著名特色: [3個關鍵點]\n\n**若是普通地點：**\n**[名稱]**\n位置: [城市, 國家]\n主要功能: [功能]\n概述與意義: [2-3句話]\n遊客體驗: [2-3句話]\n知名特色: [3個關鍵點]\n\n如果在此座標無可識別位置，回覆：\"在{latitude}, {longitude}未找到驗證位置\""
   }
 }
